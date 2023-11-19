@@ -18,6 +18,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  user: rails_partially_dockerize_template
+  password: pgpassword
+  host: 127.0.0.1
 
 development:
   <<: *default
@@ -81,4 +84,4 @@ production:
   <<: *default
   database: rails_partially_dockerize_template_production
   username: rails_partially_dockerize_template
-  password: <%= ENV["RAILS_PARTIALLY_DOCKERIZE_TEMPLATE_DATABASE_PASSWORD"] %>
+  password: <%= ENV['DB_PASSWORD'] %>

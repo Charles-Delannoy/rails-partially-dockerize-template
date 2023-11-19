@@ -1,0 +1,1 @@
+CREATE USER rails_partially_dockerize_template SUPERUSER;
